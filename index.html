@@ -1,14 +1,21 @@
-<!-- Add the stylesheet to the head -->
-<link rel="stylesheet" type="text/css" href="https://gitcdn.xyz/repo/pi0/clippyjs/master/assets/clippy.css">
+<script type="module">
+  import clippy from 'https://unpkg.com/clippyts@1.0.4/dist/index.js';
+  clippy.load({
+    name: 'Wizard',
+    selector: 'my-clippy',
+    successCb: (agent) => {
+      agent.show();
+      agent.speak("Let's add some magic to Canvas!");
+      agent.animate();
+    },
+    failCb: (e) => {
+    	console.error(e)
+    }
+  })
 
-<!-- Add these scripts to  the bottom of the page -->
-<script src="https://unpkg.com/jquery@3.2.1"></script>
-
-<script src="https://unpkg.com/clippyjs@latest"></script>
-
-<script type="text/javascript">
-clippy.load('Merlin', function(agent){
-    // Do anything with the loaded agent
-    agent.show();
-});
 </script>
+<h1>
+ Clippy Demo
+</h1>
+<div class="my-clippy"/>
+
